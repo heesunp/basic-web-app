@@ -31,4 +31,20 @@ describe("QueryProcessor", () => {
         const response: string = QueryProcessor(query);
         expect(response).toBe("heesunp");
     });
+
+    test('should handle addition queries', () => {
+        const query1 = "What is 27 plus 7?";
+        const response1: string = QueryProcessor(query1);
+        expect(response1).toBe("34");
+
+        const query2 = "What is 53 plus 65?";
+        const response2: string = QueryProcessor(query2);
+        expect(response2).toBe("118");
+    });
+
+    test('should handle largest number queries', () => {
+        const query = "Which of the following numbers is the largest: 64, 24, 99?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("99");
+    });
 });
